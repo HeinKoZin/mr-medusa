@@ -9,6 +9,13 @@ module.exports = defineConfig({
 		path: process.env.MEDUSA_ADMIN_PATH || "/app",
 	},
 	projectConfig: {
+		databaseDriverOptions: {
+			connection: {
+				ssl: {
+					rejectUnauthorized: false,
+				},
+			},
+		},
 		databaseUrl: process.env.DATABASE_URL,
 		redisUrl: process.env.REDIS_URL,
 		http: {
